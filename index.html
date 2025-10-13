@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EtherNext — Mantenimiento & Productos Automatizados</title>
+
+  <!-- Google font (futurista) -->
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <!-- Partículas de fondo -->
+  <canvas id="bgCanvas" class="bg-canvas"></canvas>
+
+  <div class="container">
+    <header class="topbar">
+      <div class="brand">
+        <img src="logo ethernext.png" alt="EtherNext logo" class="logo" onerror="this.style.display='none'">
+        <div>
+          <div class="brand-title">ETHER<span>NEXT</span></div>
+          <div class="brand-sub">Mantenimiento · Productos Automatizados</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#productos">Productos</a>
+        <a href="#por-que">¿Por qué?</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="actions">
+        <button class="icon-btn" id="open-cart"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M7 4h-2l-1 2h2l1-2zm0 0"/></svg> <span id="cart-count">0</span></button>
+        <button class="btn-neon" id="checkout-top">Pagar</button>
+      </div>
+      
+    </header>
+
+    <main>
+      <section class="hero card glass">
+        <div class="hero-left">
+          <h1>Tu PC al máximo rendimiento<br><span class="accent">Soporte & productos automatizados</span></h1>
+          <p class="muted">Mantenimiento preventivo y correctivo, armado de equipos personalizados y venta de periféricos inteligentes con instalación incluida.</p>
+          <div class="hero-cta">
+            <button class="btn-neon" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Ver productos</button>
+            <button class="btn-outline" onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">Ver servicios</button>
+          </div>
+        </div>
+        <div class="hero-right">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto=format&fit=crop" alt="PC service" />
+        </div>
+      </section>
+
+      <section id="servicios" class="card section glass">
+        <h2>Servicios</h2>
+        <p class="muted">Paquetes según tu necesidad: rápido, profesional y garantizado.</p>
+        <div class="services-grid">
+          <!-- Servicios renderizados por JS -->
+        </div>
+      </section>
+
+      <section id="productos" class="card section glass">
+        <h2>Productos Automatizados</h2>
+        <p class="muted">Catálogo curado de periféricos y soluciones inteligentes.</p>
+        <div class="product-grid">
+          <!-- Productos renderizados por JS -->
+        </div>
+      </section>
+
+      <section id="por-que" class="card section glass">
+        <h2>¿Por qué EtherNext?</h2>
+        <ul class="features">
+          <li>✅ Soporte técnico con garantía</li>
+          <li>⚡ Respuestas rápidas y servicios a domicilio</li>
+          <li>🔧 Armado y optimización a medida</li>
+          <li>🤝 Instalación y asesoría incluida en productos</li>
+        </ul>
+      </section>
+
+      <section id="contacto" class="card section glass">
+        <h2>Contacto</h2>
+        <div class="contact-grid">
+          <div>
+            <p><strong>Email</strong><br>soporte@ethernext.com</p>
+            <p><strong>Teléfono</strong><br>+57 300 123 4567</p>
+          </div>
+          <div>
+            <p><strong>Dirección</strong><br>Sede demo, Ciudad</p>
+            <p><strong>Horario</strong><br>Lun-Vie 8:30 — 18:00</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer glass">
+      <div>© <span id="year"></span> EtherNext — Proyecto demo. Pagos simulados para pruebas.</div>
+    </footer>
+  </div>
+
+  <!-- Carrito Modal -->
+  <div id="cart-modal" class="modal" aria-hidden="true">
+    <div class="modal-panel glass">
+      <header class="modal-header">
+        <h3>Tu carrito</h3>
+        <button class="icon-btn" id="close-cart">✕</button>
+      </header>
+
+      <div class="modal-body">
+        <div id="cart-items" class="cart-items"></div>
+
+        <div class="totals">
+          <div><span>Subtotal</span><strong id="subtotal">COP 0</strong></div>
+          <div><span>IVA (19%)</span><strong id="iva">COP 0</strong></div>
+          <div class="total-row"><span>Total</span><strong id="total">COP 0</strong></div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn-outline" id="clear-cart">Vaciar</button>
+          <button class="btn-neon" id="to-checkout">Pagar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal (uses same modal pattern) -->
+  <div id="checkout-modal" class="modal" aria-hidden="true">
+    <div class="modal-panel glass">
+      <header class="modal-header">
+        <h3>Checkout</h3>
+        <button class="icon-btn" id="close-checkout">✕</button>
+      </header>
+
+      <div class="modal-body">
+        <form id="checkout-form" class="checkout-form">
+          <div class="form-row">
+            <label>Nombre</label>
+            <input id="cust-name" required>
+          </div>
+          <div class="form-row">
+            <label>Correo</label>
+            <input id="cust-email" type="email" required>
+          </div>
+
+          <div class="card-visual">
+            <div class="muted small">Datos de tarjeta (demo)</div>
+            <input id="card-number" placeholder="4242 4242 4242 4242" maxlength="19">
+            <div class="form-row">
+              <input id="card-exp" placeholder="MM/AA" maxlength="5">
+              <input id="card-cvc" placeholder="CVC" maxlength="4">
+            </div>
+          </div>
+
+          <div class="checkout-summary muted small" id="summary-mini"></div>
+
+          <div class="modal-actions" style="margin-top:12px">
+            <button type="button" class="btn-outline" id="back-to-cart">Volver</button>
+            <button type="submit" class="btn-neon">Pagar ahora</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Receipt Modal -->
+  <div id="receipt-modal" class="modal" aria-hidden="true">
+    <div class="modal-panel glass">
+      <header class="modal-header">
+        <h3>Pago confirmado</h3>
+        <button class="icon-btn" id="close-receipt">✕</button>
+      </header>
+
+      <div class="modal-body">
+        <div id="receipt-content"></div>
+        <div class="modal-actions">
+          <button class="btn-outline" id="print-receipt">Imprimir</button>
+          <button class="btn-neon" id="finish">Finalizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
