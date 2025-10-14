@@ -2,8 +2,8 @@
 const PRODUCTS = [
   { id:'logitech-teclado', name:'Teclado Mecánico logitech', price:279900, img:'https://www.logitechstore.com.co/cdn/shop/files/D_860126-MCO77165932415_062024-B.jpg?v=1749834665&width=600', desc:' teclas ajustadas para el rendimiento, G213 Prodigy combina lo mejor en sensación táctil y rendimiento para gaming.' },
   { id:'torre', name:'Torre Cpu Core Ultra 9 285 Intel Graphics 1tb 64gb Pc', price:5900000, img:'https://http2.mlstatic.com/D_NQ_NP_2X_787405-MCO84167809679_042025-F.webp', desc:'Control por app, escenas automatizadas' },
-  { id:'cam-smart', name:'Cámara de Monitoreo Automatizada', price:349000, img:'https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?q=80&w=800&auto=format&fit=crop', desc:'Detección de movimiento y visión nocturna' },
-  { id:'mouse-pro', name:'Mouse Programable de Alto Rendimiento', price:159000, img:'https://images.unsplash.com/photo-1547955922-26be3c43b9a0?q=80&w=800&auto=format&fit=crop', desc:'12 botones, perfiles, alta precisión' },
+  { id:'silla Gamer', name:'Silla Gamer Titan Ergonómica con Masajeador y Reposapiés 135° Blanco', price:490000, img:'https://media.falabella.com/falabellaCO/140743878_01/w=1500,h=1500,fit=pad', desc:'Diseñada para brindarte una experiencia de trabajo sin igual, nuestra silla ofrece una combinación perfecta de comodidad y funcionalidad para largas horas de trabajo o estudio.' },
+  { id:'mouse-pro', name:'Mouse Gamer Inalámbrico Logitech G305', price:199900, img:'https://www.logitechstore.com.co/cdn/shop/files/D_816380-MCO54981706246_042023-B_e6bb756c-ae8b-459d-9b73-52bf3f3bd42b.jpg?v=1749834184&width=600', desc:'Mouse inalámbrico para juegos LIGHTSPEED diseñado para un desempeño excelente con las innovaciones tecnológicas más recientes' },
 ];
 
 const SERVICES = [
@@ -234,4 +234,5 @@ function simulatePayment(){
   addEventListener('resize', resize);
   resize(); step();
 })();
+
 
