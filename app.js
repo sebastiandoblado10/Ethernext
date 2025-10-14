@@ -1,7 +1,7 @@
 // Datos: catálogo y servicios
 const PRODUCTS = [
-  { id:'kbd-pro', name:'Teclado Mecánico Programable', price:289000, img:'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto=format&fit=crop', desc:'Switches táctiles, macros, RGB' },
-  { id:'rgb-kit', name:'Kit Iluminación Inteligente RGB', price:199000, img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop', desc:'Control por app, escenas automatizadas' },
+  { id:'logitech-teclado', name:'Teclado Mecánico logitech', price:279900, img:'https://www.logitechstore.com.co/cdn/shop/files/D_860126-MCO77165932415_062024-B.jpg?v=1749834665&width=600', desc:' teclas ajustadas para el rendimiento, G213 Prodigy combina lo mejor en sensación táctil y rendimiento para gaming.' },
+  { id:'torre', name:'Torre Cpu Core Ultra 9 285 Intel Graphics 1tb 64gb Pc', price:5900000, img:'https://http2.mlstatic.com/D_NQ_NP_2X_787405-MCO84167809679_042025-F.webp', desc:'Control por app, escenas automatizadas' },
   { id:'cam-smart', name:'Cámara de Monitoreo Automatizada', price:349000, img:'https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?q=80&w=800&auto=format&fit=crop', desc:'Detección de movimiento y visión nocturna' },
   { id:'mouse-pro', name:'Mouse Programable de Alto Rendimiento', price:159000, img:'https://images.unsplash.com/photo-1547955922-26be3c43b9a0?q=80&w=800&auto=format&fit=crop', desc:'12 botones, perfiles, alta precisión' },
 ];
@@ -234,3 +234,4 @@ function simulatePayment(){
   addEventListener('resize', resize);
   resize(); step();
 })();
+
