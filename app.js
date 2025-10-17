@@ -7,9 +7,9 @@ const PRODUCTS = [
 ];
 
 const SERVICES = [
-  { id:'svc-basic', name:'Mantenimiento Básico', price:80000, features:['Limpieza física','Optimización','Reporte básico'] },
-  { id:'svc-adv', name:'Mantenimiento Avanzado', price:120000, features:['Cambio de pasta','Revisión hardware','Backup básico'] },
-  { id:'svc-prem', name:'Mantenimiento Premium', price:180000, features:['Diagnóstico profundo','Optimización gamer'] },
+  { id:'svc-basic', name:'Mantenimiento Básico', price:80000, features:['Limpieza física','revisión y limpieza de ventiladores','optimización del sistema operativo (liberación de espacio, eliminación de archivos temporales)','actualización del antivirus','Revisión del disco duro'] },
+  { id:'svc-adv', name:'Mantenimiento Avanzado', price:120000, features:[ 'Incluye todo lo del Plan Básico, más''revisión y reparación de errores del sistema','limpieza profunda del sistema (uso de herramientas profesionales)','actualización de drivers','Optimización de arranque y procesos en segundo plano','Análisis de seguridad intermedio' ] },
+  { id:'svc-prem', name:'Mantenimiento Premium', price:180000, features:['Incluye todo lo del Plan Avanzado, más:','Soporte técnico remoto prioritario','Copia de seguridad (backup) de archivos importantes' ,'Restauración del sistema (si es necesario)' ,'Desinfección avanzada de virus, malware y spyware' ,'Informe técnico detallado','Asesoría en mejoras de hardware/software' ] },
 ];
 
 // Estado carrito
@@ -234,5 +234,6 @@ function simulatePayment(){
   addEventListener('resize', resize);
   resize(); step();
 })();
+
 
 
