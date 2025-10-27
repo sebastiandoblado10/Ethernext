@@ -109,3 +109,11 @@ main{margin-top:20px}
 /* helpers */
 .center{text-align:center}
 .hidden{display:none}
+<style>
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+
